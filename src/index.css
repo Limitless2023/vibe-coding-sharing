@@ -6,27 +6,38 @@
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 }
 
-/* ── 背景画布 ── */
+/* ── 背景 — 纯 CSS 动画渐变，零磨砂 ── */
 #bg-root {
   position: fixed;
   inset: 0;
   z-index: 0;
+  background: linear-gradient(135deg, #F6C9B9, #FDD2BF, #FFD9CA, #FFE5DB, #F6C9B9);
+  background-size: 300% 300%;
+  animation: bg-drift 20s ease-in-out infinite;
 }
 
-#bg-root canvas {
-  width: 100% !important;
-  height: 100% !important;
+@keyframes bg-drift {
+  0%, 100% { background-position: 0% 50%; }
+  25% { background-position: 100% 0%; }
+  50% { background-position: 100% 100%; }
+  75% { background-position: 0% 100%; }
 }
 
-/* ── 卡片 — 暖褐实底，无模糊无透出 ── */
+/* ── 卡片 — 暖色玻璃 ── */
 .glass {
-  background: rgba(30, 10, 5, 0.75);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(45, 20, 12, 0.48);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 8px 32px rgba(20, 8, 4, 0.12);
 }
 
 .glass-strong {
-  background: rgba(30, 10, 5, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(45, 20, 12, 0.62);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 8px 32px rgba(20, 8, 4, 0.15);
 }
 
 /* ── 滚动条 ── */
