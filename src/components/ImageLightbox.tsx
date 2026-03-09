@@ -22,7 +22,7 @@ export default function ImageLightbox({ src, onClose }: ImageLightboxProps) {
     <AnimatePresence>
       {src && (
         <motion.div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-xl cursor-pointer"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 cursor-pointer"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}

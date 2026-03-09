@@ -18,7 +18,7 @@ export default function SectionHeader({ title, subtitle }: SectionHeaderProps) {
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="text-3xl md:text-4xl font-bold text-white mb-2"
+        className="text-3xl md:text-4xl font-bold text-ink mb-2"
       >
         {title}
       </motion.h2>
@@ -26,7 +26,7 @@ export default function SectionHeader({ title, subtitle }: SectionHeaderProps) {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1 }}
-        className="text-white/70 mb-8"
+        className="text-ink-light mb-8"
       >
         {subtitle}
       </motion.p>

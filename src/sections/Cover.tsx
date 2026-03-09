@@ -15,7 +15,7 @@ export default function Cover() {
       {/* 顶部标签 */}
       <motion.div
         {...fade(1)}
-        className="text-xs tracking-[0.3em] text-white/70 uppercase mb-8"
+        className="text-xs tracking-[0.3em] text-ink-light uppercase mb-8"
       >
         MeAgent & MeFlow Agent · 2026.03
       </motion.div>
@@ -23,17 +23,17 @@ export default function Cover() {
       {/* 主标题 */}
       <motion.h1
         {...fade(2)}
-        className="text-5xl md:text-7xl font-bold text-center leading-tight mb-6"
+        className="text-5xl md:text-7xl font-bold text-center leading-tight mb-6 text-ink"
       >
-        <span className="text-white">一个 Half 产品的</span>
+        一个 Half 产品的
         <br />
-        <span className="text-accent">沉浸式 Vibe Coding</span>
+        沉浸式 Vibe Coding
       </motion.h1>
 
       {/* 副标题 */}
       <motion.p
         {...fade(3)}
-        className="text-lg text-white/70 text-center mb-16 font-mono"
+        className="text-lg text-ink-light text-center mb-16 font-mono"
       >
         4 个仓库 · ~60 个文件 · 3 种语言
       </motion.p>
@@ -52,7 +52,7 @@ export default function Cover() {
       {/* 零代码高亮 */}
       <motion.div
         {...fade(4.5)}
-        className="text-lg text-accent font-mono font-semibold mb-8"
+        className="text-lg text-ink font-mono font-semibold mb-8"
       >
         我写的代码：0 行
       </motion.div>
@@ -62,7 +62,7 @@ export default function Cover() {
         {["frontend", "copilot", "meagent", "server"].map((repo) => (
           <span
             key={repo}
-            className="px-3 py-1.5 rounded-lg text-xs font-mono text-white/70 bg-white/10 border border-white/10"
+            className="px-3 py-1.5 rounded-lg text-xs font-mono text-ink bg-ink/8 border border-ink/10"
           >
             {repo}
           </span>
@@ -70,7 +70,7 @@ export default function Cover() {
       </motion.div>
 
       {/* 作者 */}
-      <motion.div {...fade(5.5)} className="text-sm text-white/70">
+      <motion.div {...fade(5.5)} className="text-sm text-ink-light">
         Limitless
       </motion.div>
     </div>

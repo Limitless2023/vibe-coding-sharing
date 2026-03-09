@@ -66,10 +66,10 @@ export default function StatCounter({
 
   return (
     <div ref={ref} className="text-center">
-      <div className="text-4xl md:text-5xl font-bold text-white">
+      <div className="text-4xl md:text-5xl font-bold text-ink">
         {prefix}{display}{suffix}
       </div>
-      <div className="text-sm text-white/70 mt-1">{label}</div>
+      <div className="text-sm text-ink-light mt-1">{label}</div>
     </div>
   )
 }
