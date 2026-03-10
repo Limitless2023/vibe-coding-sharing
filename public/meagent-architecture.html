@@ -6,20 +6,20 @@
 <title>MeAgent 架构概览 & 输出稳定性</title>
 <style>
   :root {
-    --bg: #0a0a0a;
-    --surface: #141414;
-    --surface-2: #1a1a1a;
-    --border: #262626;
-    --border-light: #333;
-    --ink: #f0f0f0;
-    --ink-light: #888;
-    --ink-muted: #555;
-    --accent-blue: #60a5fa;
-    --accent-green: #34d399;
-    --accent-amber: #fbbf24;
-    --accent-red: #f87171;
-    --accent-purple: #a78bfa;
-    --accent-cyan: #22d3ee;
+    --bg: #ffffff;
+    --surface: #f9fafb;
+    --surface-2: #f3f4f6;
+    --border: #e5e7eb;
+    --border-light: #d1d5db;
+    --ink: #111827;
+    --ink-light: #4b5563;
+    --ink-muted: #9ca3af;
+    --accent-blue: #3b82f6;
+    --accent-green: #10b981;
+    --accent-amber: #f59e0b;
+    --accent-red: #ef4444;
+    --accent-purple: #8b5cf6;
+    --accent-cyan: #06b6d4;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -31,7 +31,7 @@
   /* Navigation */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: rgba(10,10,10,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    background: rgba(255,255,255,0.88); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--border); padding: 0 24px;
   }
   nav .nav-inner {
@@ -52,7 +52,7 @@
 
   h1 {
     font-size: 36px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 16px;
-    background: linear-gradient(135deg, #fff 0%, #999 100%);
+    background: linear-gradient(135deg, #111827 0%, #4b5563 100%);
     -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     background-clip: text;
   }
@@ -79,15 +79,15 @@
   .layer-label {
     position: absolute; top: -10px; left: 16px; padding: 0 8px;
     font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
-    background: var(--surface);
+    background: var(--bg);
   }
-  .layer-frontend { border-color: rgba(96,165,250,0.4); }
+  .layer-frontend { border-color: rgba(59,130,246,0.35); }
   .layer-frontend .layer-label { color: var(--accent-blue); }
-  .layer-app { border-color: rgba(52,211,153,0.4); }
+  .layer-app { border-color: rgba(16,185,129,0.35); }
   .layer-app .layer-label { color: var(--accent-green); }
-  .layer-framework { border-color: rgba(251,191,36,0.4); }
+  .layer-framework { border-color: rgba(245,158,11,0.35); }
   .layer-framework .layer-label { color: var(--accent-amber); }
-  .layer-infra { border-color: rgba(167,139,250,0.4); }
+  .layer-infra { border-color: rgba(139,92,246,0.35); }
   .layer-infra .layer-label { color: var(--accent-purple); }
 
   .mod-grid { display: grid; gap: 8px; }
@@ -100,7 +100,7 @@
   }
   .mod-name { font-weight: 600; font-size: 13px; color: var(--ink); }
   .mod-desc { font-size: 11px; color: var(--ink-muted); margin-top: 2px; }
-  .mod-highlight { background: rgba(251,191,36,0.08); border-color: rgba(251,191,36,0.3); }
+  .mod-highlight { background: rgba(245,158,11,0.06); border-color: rgba(245,158,11,0.3); }
   .arrow-d { text-align: center; color: var(--ink-muted); font-size: 18px; padding: 4px 0; }
   .layer-note { text-align: center; font-size: 11px; color: var(--accent-blue); margin-top: 8px; }
 
@@ -116,9 +116,9 @@
   .step-num { font-size: 10px; color: var(--ink-muted); text-transform: uppercase; }
   .step-name { font-weight: 600; font-size: 13px; color: var(--ink); }
   .step-detail { font-size: 10px; color: var(--ink-muted); margin-top: 2px; }
-  .step-blue { border-color: rgba(96,165,250,0.5); background: rgba(96,165,250,0.06); }
-  .step-green { border-color: rgba(52,211,153,0.5); background: rgba(52,211,153,0.06); }
-  .step-amber { border-color: rgba(251,191,36,0.5); background: rgba(251,191,36,0.06); }
+  .step-blue { border-color: rgba(59,130,246,0.4); background: rgba(59,130,246,0.05); }
+  .step-green { border-color: rgba(16,185,129,0.4); background: rgba(16,185,129,0.05); }
+  .step-amber { border-color: rgba(245,158,11,0.4); background: rgba(245,158,11,0.05); }
   .flow-arr { color: var(--ink-muted); padding: 0 6px; font-size: 16px; }
 
   /* Mechanism Cards */
@@ -136,7 +136,7 @@
   .mech-tag {
     display: inline-block; padding: 1px 6px; border-radius: 3px;
     font-size: 10px; font-weight: 600; margin-right: 4px;
-    background: rgba(96,165,250,0.15); color: var(--accent-blue);
+    background: rgba(59,130,246,0.1); color: var(--accent-blue);
   }
 
   /* Table */
@@ -145,7 +145,7 @@
   th { background: var(--surface-2); font-weight: 600; color: var(--ink); }
   td { color: var(--ink-light); }
   code {
-    background: var(--surface-2); color: var(--accent-amber); padding: 1px 5px;
+    background: var(--surface-2); color: #d97706; padding: 1px 5px;
     border-radius: 3px; font-size: 12px; font-family: "SF Mono", Consolas, monospace;
   }
   .good { color: var(--accent-green); font-weight: 600; }
@@ -171,15 +171,15 @@
   /* Blockquote */
   blockquote {
     border-left: 3px solid var(--accent-blue); padding: 8px 16px; margin: 12px 0;
-    background: rgba(96,165,250,0.05); border-radius: 0 6px 6px 0; color: var(--ink-light);
+    background: rgba(59,130,246,0.04); border-radius: 0 6px 6px 0; color: var(--ink-light);
     font-size: 14px;
   }
-  blockquote.green { border-left-color: var(--accent-green); background: rgba(52,211,153,0.05); }
+  blockquote.green { border-left-color: var(--accent-green); background: rgba(16,185,129,0.04); }
 
   /* Summary Box */
   .summary-box {
-    background: linear-gradient(135deg, rgba(52,211,153,0.08) 0%, rgba(96,165,250,0.08) 100%);
-    border: 1px solid rgba(52,211,153,0.3); border-radius: 12px; padding: 24px; margin: 20px 0;
+    background: linear-gradient(135deg, rgba(16,185,129,0.06) 0%, rgba(59,130,246,0.06) 100%);
+    border: 1px solid rgba(16,185,129,0.25); border-radius: 12px; padding: 24px; margin: 20px 0;
   }
   .summary-box p { font-size: 15px; color: var(--ink); line-height: 1.9; }
 
@@ -218,7 +218,7 @@
   <div>
     <span class="subtitle">面向销售 & 售前</span>
     <span class="subtitle">2026-03-10</span>
-    <span class="subtitle">技术团队内部材料</span>
+    <span class="subtitle">技术架构材料</span>
   </div>
 </section>
 
@@ -325,7 +325,7 @@
     </div>
     <div class="mech" style="border-left-color: var(--accent-red);">
       <h4>2. 错误熔断 & 自愈</h4>
-      <p><span class="mech-tag" style="background:rgba(248,113,113,0.15);color:var(--accent-red);">容错</span> 连续失败自动刹车</p>
+      <p><span class="mech-tag" style="background:rgba(239,68,68,0.1);color:var(--accent-red);">容错</span> 连续失败自动刹车</p>
       <p>工具执行设有<strong>连续错误阈值（默认 16 次）</strong>，超过后自动停止调用，避免死循环。</p>
       <ul>
         <li>单次失败：模型拿到错误详情，自动换一种方式重试</li>
@@ -335,7 +335,7 @@
     </div>
     <div class="mech" style="border-left-color: var(--accent-amber);">
       <h4>3. 流式 Prefetch 容错</h4>
-      <p><span class="mech-tag" style="background:rgba(251,191,36,0.15);color:var(--accent-amber);">网络</span> 三阶段错误保护</p>
+      <p><span class="mech-tag" style="background:rgba(245,158,11,0.1);color:var(--accent-amber);">网络</span> 三阶段错误保护</p>
       <p>AG-UI 流式输出分<strong>预取 → 编码 → 流式</strong>三个阶段：</p>
       <ul>
         <li><strong>预取阶段</strong>：先验证第一个事件，错误直接返回 HTTP 错误码</li>
@@ -345,7 +345,7 @@
     </div>
     <div class="mech" style="border-left-color: var(--accent-purple);">
       <h4>4. 子 Agent 运行时隔离</h4>
-      <p><span class="mech-tag" style="background:rgba(167,139,250,0.15);color:var(--accent-purple);">安全</span> 互不干扰、独立容错</p>
+      <p><span class="mech-tag" style="background:rgba(139,92,246,0.1);color:var(--accent-purple);">安全</span> 互不干扰、独立容错</p>
       <p>子 Agent 拥有<strong>独立的工具集、状态、和错误预算</strong>。</p>
       <ul>
         <li>每个子 Agent 独立 TodoState，无全局状态共享</li>
@@ -355,7 +355,7 @@
     </div>
     <div class="mech" style="border-left-color: var(--accent-green);">
       <h4>5. IntegHub 集成重试</h4>
-      <p><span class="mech-tag" style="background:rgba(52,211,153,0.15);color:var(--accent-green);">集成</span> 指数退避 + 超时保护</p>
+      <p><span class="mech-tag" style="background:rgba(16,185,129,0.1);color:var(--accent-green);">集成</span> 指数退避 + 超时保护</p>
       <p><strong>指数退避轮询</strong>（1s → 2s → 4s ... 最大 60s），总超时 600s + 连续失败 3 次熔断。</p>
       <ul>
         <li>敏感数据自动脱敏（API Key/Token/密码）</li>
@@ -365,7 +365,7 @@
     </div>
     <div class="mech" style="border-left-color: var(--accent-cyan);">
       <h4>6. 执行状态管理 & 取消</h4>
-      <p><span class="mech-tag" style="background:rgba(34,211,238,0.15);color:var(--accent-cyan);">控制</span> 全生命周期可控</p>
+      <p><span class="mech-tag" style="background:rgba(6,182,212,0.1);color:var(--accent-cyan);">控制</span> 全生命周期可控</p>
       <p><strong>全局状态追踪</strong>（pending → running → completed/failed），随时取消。</p>
       <ul>
         <li>同一会话同时只允许一个活跃执行</li>
@@ -499,7 +499,7 @@
 
 </main>
 
-<footer>MeAgent Architecture & Stability — Internal Sales Material — 2026-03-10</footer>
+<footer>MeAgent Architecture & Stability — 2026-03-10</footer>
 
 <script>
 // Highlight active nav link on scroll
