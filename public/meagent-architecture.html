@@ -314,11 +314,10 @@
 
   <div class="mech-grid">
     <div class="mech" style="border-left-color: var(--accent-blue);">
-      <h4>1. ScheduleTodo + Prompt 机制 <small style="color:var(--accent-blue)">[规划]</small></h4>
+      <h4>1. ScheduleTodo 任务规划机制 <small style="color:var(--accent-blue)">[规划]</small></h4>
       <p><span class="mech-tag">规划</span> Agent 主动规划、拆解、追踪任务进度</p>
-      <p>对于复杂任务，Agent 通过 ScheduleTodo 工具将任务拆解为可追踪的子步骤（pending → in_progress → completed），<strong>每次操作后返回完整任务状态</strong>，让 Agent 始终清楚「做了什么、还剩什么」。配合 SYSTEM_INSTRUCTIONS 中的 Prompt 引导（Purpose 正反示例 + ScheduleTodo 使用规范），从源头约束 Agent 的行为模式。</p>
+      <p>对于复杂任务，Agent 通过 ScheduleTodo 工具将任务拆解为可追踪的子步骤（pending → in_progress → completed），<strong>每次操作后返回完整任务状态</strong>，让 Agent 始终清楚「做了什么、还剩什么」，从源头约束 Agent 的行为模式：先规划再执行，而非随意发散。</p>
       <ul>
-        <li>每个工具调用强制声明 <code>purpose</code>（意图），防止无目的调用</li>
         <li>复杂任务自动创建待办清单，逐步推进</li>
         <li>每步完成后返回全量状态，支持中途重新规划</li>
       </ul>
@@ -416,7 +415,7 @@
     <div class="qa-q">「你们怎么保证 Agent 输出的稳定性？」</div>
     <div class="qa-a">我们从 4 个维度保障 Agent 的执行效果稳定性：</div>
     <ul class="qa-pts">
-      <li><strong>任务规划</strong> — Agent 通过 ScheduleTodo 主动拆解复杂任务、追踪进度，每步都有明确意图（Purpose），不会无目的发散</li>
+      <li><strong>任务规划</strong> — Agent 通过 ScheduleTodo 主动拆解复杂任务、追踪进度，逐步推进，不会无目的发散</li>
       <li><strong>上下文隔离</strong> — 复杂任务拆分为子 Agent 独立执行，每个子 Agent 有干净的上下文和专属 Skill 指令，避免相互干扰</li>
       <li><strong>多阶段执行</strong> — 每次执行前自动加载完整对话历史 + 注入业务上下文（记忆、权限、技能摘要），确保 Agent 有据可依</li>
       <li><strong>闭环反馈</strong> — 工具调用结果实时回传，Agent 根据反馈持续调整策略，而非一次性盲目生成</li>
