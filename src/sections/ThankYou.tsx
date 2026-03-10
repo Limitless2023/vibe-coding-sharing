@@ -29,7 +29,7 @@ export default function ThankYou() {
       >
         希望能给大家一些启发
         <br />
-        不管你是什么角色，AI 都可以成为你的超级搭档
+        AI 都可以成为你的超级搭档
       </motion.p>
     </div>
   )

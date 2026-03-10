@@ -20,11 +20,13 @@ export default function useKeyboardNav(
         case "ArrowRight":
         case " ":
           e.preventDefault()
+          if (document.activeElement instanceof HTMLElement) document.activeElement.blur()
           onNavigate(1)
           break
         case "ArrowUp":
         case "ArrowLeft":
           e.preventDefault()
+          if (document.activeElement instanceof HTMLElement) document.activeElement.blur()
           onNavigate(-1)
           break
       }
